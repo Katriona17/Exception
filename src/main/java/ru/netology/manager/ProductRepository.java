@@ -16,6 +16,8 @@ public class ProductRepository {
         products = tmp;
     }
 
+
+
     public void removeById(int id) {
         int length = products.length - 1;
         Product[] tmp = new Product[length];
