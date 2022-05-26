@@ -88,4 +88,18 @@ class ProductManagerTest {
         assertEquals(expected, actual);
 
     }
+
+    @Test
+    void shouldThrowException() {
+        ProductRepository repository = new ProductRepository();
+
+        repository.save(number1);
+        repository.save(number2);
+        repository.save(number3);
+        repository.save(number4);
+
+        assertThrows(NotFoundException.class, () -> {
+            repository.removeById(6);
+        });
+    }
 }
